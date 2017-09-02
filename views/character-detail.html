@@ -1,0 +1,43 @@
+<div class="overlay">
+	<a id="close" href="#"><div class="close-sign">X</div></a>
+	<div class="container" >
+		<div class="panel ">
+			<div class="panel-heading text-center">{{characterCtrl.characterDetail.name}}</div>
+			<div class="panel-body">
+				<table class="table text-center">
+
+					<tr ng-show="characterCtrl.characterDetail.aliases.length>0">
+						<td>Aliases:</td>
+						<td>
+							<p ng-repeat="alias in characterCtrl.characterDetail.aliases">{{alias}}</p>
+						</td>
+					</tr >
+					<tr ng-show="characterCtrl.characterDetail.culture.length > 0 ">
+						<td>Culture:</td>
+						<td>{{characterCtrl.characterDetail.culture}}</td>
+					</tr>
+					<tr ng-show="characterCtrl.characterDetail.born.length > 0 ">
+						<td>Born:</td>
+						<td>{{characterCtrl.characterDetail.born | date:dd:mm:yyyy}}</td>
+					</tr>
+					<tr  ng-show="characterCtrl.characterDetail.allegiances.length>0" >
+						<td>Allegiances:</td>
+						<td>
+							<p ng-repeat="allegiance in characterCtrl.characterDetail.allegiances"><a style="color:#fff" ng-href="{{allegiance.replace('https://anapioficeandfire.com/api/houses','index.html#!/house-detail')}}" >
+								{{allegiance.replace('https://anapioficeandfire.com/api/houses/','House - ')}}</a>
+							</p>
+						</td>
+					</tr>
+					<tr ng-show="characterCtrl.characterDetail.books.length>0">
+						<td>Books:</td>
+						<td>
+							<p id="booklinks" ng-repeat="book in characterCtrl.characterDetail.books"><a style="color:#fff" ng-href="{{book.replace('https://anapioficeandfire.com/api/books','index.html#!/book-detail')}}" >
+								{{book.replace('https://anapioficeandfire.com/api/books/','Book - ')}}</a>
+							</p>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

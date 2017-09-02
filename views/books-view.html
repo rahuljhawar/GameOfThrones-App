@@ -1,0 +1,9 @@
+<div class="card row">
+	<div  class="counter col-xs-2">#{{index}}</div>
+	<div  class=" icon col-xs-4"></div>
+	<div class="col-xs-6">
+	<p>{{book.name}}</p>
+	<p>Pages: {{book.numberOfPages}}</p>
+	<p ng-repeat="author in book.authors">{{author}}</p>
+	</div>
+</div>

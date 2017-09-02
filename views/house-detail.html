@@ -1,0 +1,45 @@
+<div class="overlay">
+	<a id="close" href="#"><div class="close-sign">X</div></a>
+	<div class="container" >
+		<div class="panel ">
+			<div class="panel-heading text-center">{{houseCtrl.houseDetail.name}}</div>
+			<div class="panel-body">
+				<table class="table text-center">
+
+					<tr ng-show="houseCtrl.houseDetail.region.length>0">
+						<td>Aliases:</td>
+						<td>{{houseCtrl.houseDetail.region}}</td>
+					</tr>
+					<tr ng-show="houseCtrl.houseDetail.coatOfArms.length > 0 ">
+						<td>CoatOfArms:</td>
+						<td>{{houseCtrl.houseDetail.coatOfArms}}</td>
+					</tr>
+					<tr ng-show="houseCtrl.houseDetail.words.length > 0 ">
+						<td>Words:</td>
+						<td>{{houseCtrl.houseDetail.words}}</td>
+					</tr>
+					<tr  ng-show="houseCtrl.houseDetail.titles.length>0" >
+						<td>Titles:</td>
+						<td ng-repeat="title in houseCtrl.houseDetail.titles">{{title}}</td>
+					</tr>
+					<tr  ng-show="houseCtrl.houseDetail.seats.length>0" >
+						<td>Seats:</td>
+						<td ng-repeat="seat in houseCtrl.houseDetail.seats">{{seat}}</td>
+					</tr>
+					<tr ng-show="houseCtrl.houseDetail.founder.length>0">
+						<td>Founder:</td>
+						<td>{{houseCtrl.houseDetail.founder}}</td>
+					</tr>
+					<tr ng-show="houseCtrl.houseDetail.swornMembers.length>0">
+						<td>Sworn Members:</td>
+						<td>
+							<p id="booklinks" ng-repeat="sm in houseCtrl.houseDetail.swornMembers"><a  style="color:#fff" ng-href="{{sm.replace('https://anapioficeandfire.com/api/characters','index.html#!/character-detail')}}" >
+								{{sm.replace('https://anapioficeandfire.com/api/characters/','Character - ')}}</a>
+							</p>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,51 @@
+<div class="overlay">
+	<a id="close" href="#"><div class="close-sign">X</div></a>
+	<div class="container" >
+		<div class="panel ">
+			<div class="panel-heading text-center">{{bookCtrl.bookDetail.name}}</div>
+			<div class="panel-body">
+				<table class="table text-center">
+
+					<tr>
+						<td>Authors:</td>
+						<td>
+							<p ng-repeat="author in bookCtrl.bookDetail.authors">{{author}}</p>
+						</td>
+					</tr>
+					<tr >
+						<td>Pages:</td>
+						<td>{{bookCtrl.bookDetail.numberOfPages}}</td>
+					</tr>
+					<tr >
+						<td>Publisher:</td>
+						<td>{{bookCtrl.bookDetail.publisher}}</td>
+					</tr>
+					<tr >
+						<td>ISBN:</td>
+						<td>{{bookCtrl.bookDetail.isbn}}</td>
+					</tr>
+					<tr >
+						<td>Type:</td>
+						<td>{{bookCtrl.bookDetail.mediaType}}</td>
+					</tr>
+					<tr  >
+						<td>Country:</td>
+						<td>{{bookCtrl.bookDetail.country}}</td>
+					</tr>
+					<tr  >
+						<td>Released:</td>
+						<td>{{bookCtrl.bookDetail.released|date:dd:mm:yyyy}}</td>
+					</tr>
+					<tr  >
+						<td>Pov Characters:</td>
+						<td>
+							<p id="charlinks" ng-repeat="char in bookCtrl.bookDetail.povCharacters"><a style="color:#fff" ng-href="{{char.replace('https://anapioficeandfire.com/api/characters','index.html#!/character-detail')}}" >
+								{{char.replace('https://anapioficeandfire.com/api/characters/','Character - ')}}</a>
+							</p>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

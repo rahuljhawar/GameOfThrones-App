@@ -1,0 +1,97 @@
+
+
+<nav class="container">
+
+	<ul id="menu">
+		<li ><a  ng-click="mainCtrl.showDiv(1)">Books</a></li>
+		<li ><a  ng-click="mainCtrl.showDiv(2)">Characters</a></li>
+		<li><a  ng-click="mainCtrl.showDiv(3)">Houses</a></li>
+	</ul>
+
+
+</nav>
+
+<div id="hovercontent" ng-repeat="entity in mainCtrl.data">
+	<div ng-if='entity.key=="books"' ng-show="mainCtrl.bookKey">
+		<div class=" overlay animated bounceInRight">
+			<a id="close" href="#"><div class="close-sign">X</div></a>
+			<div class="container">
+				<div class= "input-field row">
+					<div class="col-xs-12 col-sm-12 col-md-2 text-center" >
+						<button id="sort-button" data-toggle="button" class="btn btn-md text-center btn-responsive " ng-click="toggle1=!toggle1"><i class="fa fa-sort text-center" aria-pressed="true"> Order By Book Name</i></button>
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-5">
+						<input id=book ng-model=filterbook.name type="text" class="form-control" placeholder=" Search Book" aria-label="...">
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-5">
+						<input id=book ng-model=filterauthor.authors type="text" class="form-control" placeholder="Search Author" aria-label="...">
+					</div>
+				</div>
+				<div class=" content">
+					<div ng-repeat="obj in entity.value | filter:filterbook | filter:filterauthor | orderBy: !toggle1? 'name':'-name'"  >
+						<a ng-href="index.html#!/book-detail/{{obj.url.replace('https://anapioficeandfire.com/api/books/','')}}">
+							<book-view book=obj index="{{$index + 1}}"></book-view>
+						</a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div ng-if='entity.key=="characters"' ng-show="mainCtrl.charKey">
+		<div class="overlay animated bounceInRight">
+			<a id="close" href="#"><div class="close-sign">X</div></a>
+			<div class="container">
+				<div class= "input-field row">
+					<div class="col-xs-12 col-sm-12 col-md-2 text-center" >
+						<button id="sort-button" data-toggle="button" class="btn btn-md text-center btn-responsive " ng-click="toggle2=!toggle2"><i class="fa fa-sort text-center" aria-pressed="true"> Order By Character Name</i></button>
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-5">
+						<input id=book ng-model=filtercharacter.name type="text" class="form-control" placeholder=" Search Character" aria-label="...">
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-5">
+						<input id=book ng-model=filterculture.culture type="text" class="form-control" placeholder="Search Culture" aria-label="...">
+					</div>
+				</div>
+				<div class="content">
+					<div ng-repeat="obj in entity.value | filter:filtercharacter | filter:filterculture | orderBy: !toggle2? 'name':'-name'"  >
+						<a ng-href="index.html#!/character-detail/{{obj.url.replace('https://anapioficeandfire.com/api/characters/','')}}">
+							<character-view character=obj index="{{$index + 1}}"></character-view>
+						</a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div ng-if='entity.key=="houses"'  ng-show="mainCtrl.houseKey">
+		<div class=" overlay animated bounceInRight">
+			<a id="close" href="#"><div class="close-sign">X</div></a>
+			<div class="container">
+				<div class= "input-field row">
+					<div class="col-xs-12 col-sm-12 col-md-2 text-center" >
+						<button id="sort-button" data-toggle="button" class="btn btn-md text-center btn-responsive " ng-click="toggle3=!toggle3"><i class="fa fa-sort text-center" aria-pressed="true"> Order By House Name</i></button>
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-5">
+						<input id=book ng-model=filterhouse.name type="text" class="form-control" placeholder=" Search House" aria-label="...">
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-5">
+						<input id=book ng-model=filterregion.region type="text" class="form-control" placeholder="Search Region" aria-label="...">
+					</div>
+				</div>
+				<div class="content">
+					<div ng-repeat="obj in entity.value | filter:filterhouse | filter:filterregion | orderBy: !toggle3? 'name':'-name'"  >
+						<a ng-href="index.html#!/house-detail/{{obj.url.replace('https://anapioficeandfire.com/api/houses/','')}}">
+							<house-view house=obj index="{{$index + 1}}"></house-view>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+

@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="GameOfThrones">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>Game Of Thrones</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="https://getbootstrap.com/docs/3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Play|Dancing+Script|Anton|Arapey" rel="stylesheet">
+
+
+</head>
+
+<body>
+	<div  id="bg">
+		<img src="images/got.png"/>
+	</div>
+
+	<div ng-view></div>
+	<footer >
+		<p>Created By <a href="https://rahuljhawar.github.io/">Rahul Jhawar</a></p>
+	</footer>	
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.js"></script>
+	<script src="angular/app.js"></script>
+	<script src="angular/routes.js"></script>
+	<script src="angular/directives/directives.js"></script>
+	<script src="angular/services/services.js"></script>
+	<script src="angular/controllers/booksController.js"></script>
+	<script src="angular/controllers/charactersController.js"></script>
+	<script src="angular/controllers/housesController.js"></script>
+	<script src="angular/controllers/mainController.js"></script>
+</body>
+</html>
